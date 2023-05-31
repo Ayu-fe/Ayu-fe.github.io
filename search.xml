@@ -8,7 +8,7 @@
       <link href="/2023/05/30/hello-world/"/>
       <url>/2023/05/30/hello-world/</url>
       
-        <content type="html"><![CDATA[<h1 id="测试文章"><a href="#测试文章" class="headerlink" title="测试文章"></a>测试文章</h1><blockquote><p>——《简爱》</p></blockquote><p>你以为我贫穷、相貌平平就没有感情吗?我向你发誓，如果上帝赋予我财富和美貌，我会让你无法离开我，就像我现在无法离开你一样。虽然上帝没有这么做，可我们在精神上依然是平等的。</p><blockquote><p>——《谈生命》</p></blockquote><p>有时候他遇到巉岩前阻，他愤激地奔腾了起来，怒吼着，回旋着，前波后浪的起伏催逼，直到他过了，冲倒了这危崖他才心平气和的一泻千里。有时候他经过了细细的平沙，斜阳芳草里，看见了夹岸红艳的桃花，他快乐而又羞怯，静静地流着，低低的吟唱着，轻轻地度过这一段浪漫的行程。</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="测试文章1"><a href="#测试文章1" class="headerlink" title="测试文章1"></a>测试文章1</h1><blockquote><p>——《简爱》</p></blockquote><p>你以为我贫穷、相貌平平就没有感情吗?我向你发誓，如果上帝赋予我财富和美貌，我会让你无法离开我，就像我现在无法离开你一样。虽然上帝没有这么做，可我们在精神上依然是平等的。</p><blockquote><p>——《谈生命》</p></blockquote><p>有时候他遇到巉岩前阻，他愤激地奔腾了起来，怒吼着，回旋着，前波后浪的起伏催逼，直到他过了，冲倒了这危崖他才心平气和的一泻千里。有时候他经过了细细的平沙，斜阳芳草里，看见了夹岸红艳的桃花，他快乐而又羞怯，静静地流着，低低的吟唱着，轻轻地度过这一段浪漫的行程。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;hello, world&#x27;</span>)</span><br></pre></td></tr></table></figure>]]></content>
       
       
       
