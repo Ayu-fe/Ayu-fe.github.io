@@ -464,7 +464,7 @@ figure .pin-copy {
 }
 
 .markdown-body strong {
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .markdown-body hr {
@@ -1018,16 +1018,16 @@ figure .pin-copy {
 
 /* light scheme */
 :root[color-mode="light"] {
-  --bg-body: #E2E2E4;
+  --bg-body: #FAF8F4;
   --color-text-base: #666;
   --color-text-a: #666;
   --color-text-a-hover: #000000;
   --color-text-a-active: #000000;
   --color-text-sub: #8e8e8e;
   --color-text-md-title: #24292e;
-  --color-text-md-content: #24292e;
+  --color-text-md-content: #666666;
   --color-text-md-code: #e96900;
-  --bg-text-md-code: #f8f8f8;
+  --bg-text-md-code: #eceff4;
   --bg-block-md-quote: #EEEEEE;
   --color-block-md-quote: #e6e6e6;
   --color-divider-md-border: #5858581a;
@@ -1041,7 +1041,7 @@ figure .pin-copy {
 
 /* dark scheme */
 :root[color-mode="dark"] {
-  --bg-body: #2E3440;
+  --bg-body: #2D2E3D;
   --color-text-base: #C1C2C5;
   --color-text-a: #C1C2C5;
   --color-text-a-hover: #FFFFFF;
@@ -1057,7 +1057,7 @@ figure .pin-copy {
   --bg-content-search: rgb(59 66 82 / 60%);
   --bg-block-md-pre: #3a4252;
   --color-text-md-pre: #abb9cf;
-  --bg-block-md-table: #2E3440;
+  --bg-block-md-table: #2D2E3D;
   --bg-block-md-table-2: #313744;
   --color-border-md-table: #4c566a;
 }
@@ -1072,7 +1072,8 @@ html, body {
   letter-spacing: 0.01rem;
   background-color: var(--bg-body);
   transition: color 400ms ease-in-out 0s, background-color 400ms ease-in-out 0s;
-  font-family: Consolas, "Liberation Mono", Menlo, Monaco, "Source Han Sans CN", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif
+  /* font-family: Consolas, "Liberation Mono", Menlo, Monaco, "Source Han Sans CN", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif */
+  font-family: "Montserrat", "Helvetica Neue", "Hiragino Sans GB", "LiHei Pro", Arial, sans-serif;
 }
 
 body.hidden {
@@ -1146,7 +1147,7 @@ a:hover {
 }
 
 .container {
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
 }
 
@@ -2146,41 +2147,45 @@ a:hover {
   margin-left: 30px;
 }
 .v[data-class="v"] .vwrap .vheader .vinput:focus {
-  border-bottom-color: #f40 !important;
+  border-bottom-color: #8baf56 !important;
 }
 .v[data-class="v"] .vbtn:active,
 .v[data-class="v"] .vbtn:hover {
-  border-color: #f40 !important;
+  border-color: #8baf56 !important;
 }
 .v[data-class="v"] .vcards .vcard .vh .vmeta .vat {
-  color: #f40 !important;
+  color: #8baf56 !important;
 }
 .v[data-class="v"] a {
-  color: #f40 !important;
+  color: #8baf56 !important;
 }
 .fancybox-progress {
-  background: #f40 !important;
+  background: #8baf56 !important;
 }
 .markdown-body code {
-  color: #f40;
+  color: #8baf56;
 }
 .markdown-body a:hover {
-  border-bottom: 2px solid #f40;
+  border-bottom: 2px solid #8baf56;
 }
 .markdown-body blockquote {
-  border-color: #f40;
+  border-color: #8baf56;
+}
+.markdown-body strong {
+  color: #8baf56;
+  font-weight: 400;
 }
 .toc-link:hover::after {
-  background-color: #f40;
+  background-color: #8baf56;
 }
 .toc-link.active::after {
-  background-color: #f40;
+  background-color: #8baf56;
 }
 .navbar ul li a:hover::after {
-  background-color: #f40;
+  background-color: #8baf56;
 }
 .navbar ul li.active a::after {
-  background-color: #f40;
+  background-color: #8baf56;
 }
 .markdown-body h1 .headerlink::before,
 .markdown-body h2 .headerlink::before,
@@ -2188,5 +2193,5 @@ a:hover {
 .markdown-body h4 .headerlink::before,
 .markdown-body h5 .headerlink::before,
 .markdown-body h6 .headerlink::before {
-  color: #f40;
+  color: #8baf56;
 }
