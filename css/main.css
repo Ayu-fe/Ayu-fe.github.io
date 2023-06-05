@@ -673,6 +673,7 @@ figure .pin-copy {
   /*margin: 3rem 0;*/
   padding: 15px;
   color: var(--color-text-base);
+  font-style: italic;
   border-left: 0.25em solid var(--color-block-md-quote);
   border-radius: 3px;
 }
@@ -1027,7 +1028,7 @@ figure .pin-copy {
   --color-text-md-title: #24292e;
   --color-text-md-content: #666666;
   --color-text-md-code: #e96900;
-  --bg-text-md-code: #eceff4;
+  --bg-text-md-code: #f1f1f1;
   --bg-block-md-quote: #EEEEEE;
   --color-block-md-quote: #e6e6e6;
   --color-divider-md-border: #5858581a;
@@ -1073,6 +1074,7 @@ html, body {
   background-color: var(--bg-body);
   transition: color 400ms ease-in-out 0s, background-color 400ms ease-in-out 0s;
   /* font-family: Consolas, "Liberation Mono", Menlo, Monaco, "Source Han Sans CN", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif */
+  /* font-family: "Roboto", "Helvetica Neue", "Hiragino Sans GB", "LiHei Pro", Arial, serif; */
   font-family: "Montserrat", "Helvetica Neue", "Hiragino Sans GB", "LiHei Pro", Arial, sans-serif;
 }
 
@@ -1147,7 +1149,7 @@ a:hover {
 }
 
 .container {
-  width: 60%;
+  width: 45%;
   margin: 0 auto;
 }
 
@@ -1241,10 +1243,21 @@ a:hover {
 
 .post-item {
   display: flex;
-  font-size: 1.6rem;
-  margin-bottom: 20px;
+  font-size: 1.8rem;
+  margin-bottom: 40px;
   align-items: center;
   line-height: 21px;
+  font-family: "Montserrat", "Helvetica Neue", "Hiragino Sans GB", "LiHei Pro", Arial, sans-serif;
+  position: relative;
+}
+
+.post-item::after {
+  content: ' ';
+  width: 100%;
+  height: 1px;
+  background-color: #e6e6e6;
+  bottom: -20px;
+  position: absolute;
 }
 
 .post-item .time-m-d {
@@ -1253,7 +1266,7 @@ a:hover {
   color: var(--color-text-base);
   font-size: 1.5rem;
   line-height: 21px;
-  /*font-family: 'Raleway', 'Helvetica Neue', 'Arial', sans-serif;*/
+  font-style: italic;
 }
 
 .post-item .title {

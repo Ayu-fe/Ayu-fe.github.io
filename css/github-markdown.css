@@ -421,6 +421,7 @@
   /*margin: 3rem 0;*/
   padding: 15px;
   color: var(--color-text-base);
+  font-style: italic;
   border-left: 0.25em solid var(--color-block-md-quote);
   border-radius: 3px;
 }
