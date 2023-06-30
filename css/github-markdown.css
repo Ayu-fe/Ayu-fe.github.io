@@ -428,10 +428,12 @@
 
 .markdown-body blockquote > :first-child {
   margin-top: 0;
+  opacity: 0.5;
 }
 
 .markdown-body blockquote > :last-child {
   margin-bottom: 0;
+  opacity: 0.5;
 }
 
 .markdown-body kbd {
