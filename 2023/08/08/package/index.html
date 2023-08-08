@@ -13,7 +13,7 @@
   
   <title>
     
-      Tag 
+      整理一些前端常用单又不常用的第三方库 
       
       
       |
@@ -140,21 +140,128 @@
 
 
 
-  <!-- 标签页 url形式：https://yoursite/tags/ -->
-  <div class="container tag-index">
-    <div>
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C/" rel="tag">工作</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a><span class="tag-list-count">1</span></li></ul>
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      
+      <div class="post-title">整理一些前端常用单又不常用的第三方库</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+          2023-08-08 19:50:27
+          
+          <span id="busuanzi_container_page_pv" class="ml-10">
+            阅读量<span id="busuanzi_value_page_pv"></span>
+          </span>
+        </span>
+        
+              <span class="post-tags">
+                <i class="iconfont icon-tags mr-10" title="Tags"></i>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/%E5%B7%A5%E4%BD%9C/" title="工作">
+                    #工作
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <p>整理一些工作中遇到的特殊场景会用到的开源库，大部分都比较基础，可能一辈子都用不上，但是还是得心里有个数，所以这里整理的大都是我只是了解但从未用过的库。</p>
+<h4 id="虚拟滚动"><a href="#虚拟滚动" class="headerlink" title="虚拟滚动"></a>虚拟滚动</h4><p><a target="_blank" rel="noopener" href="https://virtuoso.dev/">Virtuoso</a></p>
+<p>虚拟滚动的场景在工作中并不常见，就算见到也不好直接手写，用开源的库会好一些，通常情况下，可以封装成一个通用的基础组件。</p>
+<h4 id="React-Hook"><a href="#React-Hook" class="headerlink" title="React Hook"></a>React Hook</h4><p><a target="_blank" rel="noopener" href="https://ahooks.js.org/zh-CN/">aHooks</a></p>
+<p>开源好用的hook库，这个还是比较常用的。</p>
+<h4 id="H5表单"><a href="#H5表单" class="headerlink" title="H5表单"></a>H5表单</h4><p><a target="_blank" rel="noopener" href="https://field-form-react-component.vercel.app/">rc-field-form</a></p>
+<p>封装基础Form组件会用到</p>
+<h4 id="WEB-3D"><a href="#WEB-3D" class="headerlink" title="WEB 3D"></a>WEB 3D</h4><p><a target="_blank" rel="noopener" href="https://www.babylonjs.com/">Babylon</a></p>
+<p>基于webgl的3d渲染引擎，值得学习</p>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2023/06/25/mac/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+              2023-08-08 19:50:27
+            </span>
+            
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags mr-10" title="Tags"></i>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/%E5%B7%A5%E4%BD%9C/" title="工作">
+                        #工作
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
+        </div>
+      
     </div>
+    
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+  
+    <script async type="text/javascript" src="/plugins/valine.min.js" onload="loadValineSuc(this)"></script>
+  
+
+  <div id="vcomments"></div>
+
+  <script>
+    function loadValineSuc() {
+      new Valine({
+        el: '#vcomments',
+        appId: 'TInBwkOJroOsenQdqeYlBf3t-gzGzoHsz',
+        appKey: '9HSDLKQ0vdaPQkHqCfa7iH0w',
+        placeholder: 'welcome!',
+        avatar: 'retro',
+        lang: 'en'
+      })
+    }
+  </script>
+
+    <style>
+      .comments-container .v .vempty {
+        display: none!important;
+      }
+    </style>
+
+
+
+
+      </div>
+    
   </div>
-  
 
-  
-
-  
-
-  
-
-  
 
         
 <div class="footer">
@@ -425,12 +532,12 @@
       </a>
       <div class="share-content hidden">
         
-          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + tags + '&url=' + https%3A%2F%2Fayu-fe.github.io%2Ftags%2F + '" target="_blank" title="Twitter">
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + %E6%95%B4%E7%90%86%E4%B8%80%E4%BA%9B%E5%89%8D%E7%AB%AF%E5%B8%B8%E7%94%A8%E5%8D%95%E5%8F%88%E4%B8%8D%E5%B8%B8%E7%94%A8%E7%9A%84%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93 + '&url=' + https%3A%2F%2Fayu-fe.github.io%2F2023%2F08%2F08%2Fpackage%2F + '" target="_blank" title="Twitter">
             <i class="iconfont icon-twitter"></i>
           </a>
         
         
-          <a class="share-item" href="https://www.facebook.com/sharer.php?u=https://ayu-fe.github.io/tags/" target="_blank" title="Facebook">
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=https://ayu-fe.github.io/2023/08/08/package/" target="_blank" title="Facebook">
             <i class="iconfont icon-facebooksquare"></i>
           </a>
         

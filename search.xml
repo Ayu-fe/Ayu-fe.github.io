@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>整理一些前端常用单又不常用的第三方库</title>
+      <link href="/2023/08/08/package/"/>
+      <url>/2023/08/08/package/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>整理一些工作中遇到的特殊场景会用到的开源库，大部分都比较基础，可能一辈子都用不上，但是还是得心里有个数，所以这里整理的大都是我只是了解但从未用过的库。</p><h4 id="虚拟滚动"><a href="#虚拟滚动" class="headerlink" title="虚拟滚动"></a>虚拟滚动</h4><p><a href="https://virtuoso.dev/">Virtuoso</a></p><p>虚拟滚动的场景在工作中并不常见，就算见到也不好直接手写，用开源的库会好一些，通常情况下，可以封装成一个通用的基础组件。</p><h4 id="React-Hook"><a href="#React-Hook" class="headerlink" title="React Hook"></a>React Hook</h4><p><a href="https://ahooks.js.org/zh-CN/">aHooks</a></p><p>开源好用的hook库，这个还是比较常用的。</p><h4 id="H5表单"><a href="#H5表单" class="headerlink" title="H5表单"></a>H5表单</h4><p><a href="https://field-form-react-component.vercel.app/">rc-field-form</a></p><p>封装基础Form组件会用到</p><h4 id="WEB-3D"><a href="#WEB-3D" class="headerlink" title="WEB 3D"></a>WEB 3D</h4><p><a href="https://www.babylonjs.com/">Babylon</a></p><p>基于webgl的3d渲染引擎，值得学习</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 工作 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>我是如何使用自己的mac的</title>
       <link href="/2023/06/25/mac/"/>
       <url>/2023/06/25/mac/</url>
