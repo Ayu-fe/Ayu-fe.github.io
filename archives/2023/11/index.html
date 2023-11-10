@@ -13,7 +13,7 @@
   
   <title>
     
-      Tag 
+      archive_a: 2023/11 
       
       
       |
@@ -62,7 +62,7 @@
       document.documentElement.setAttribute('color-mode', colorMode)
     }
   </script>
-<meta name="generator" content="Hexo 6.3.0"><script src="/assets/js/DPlayer.min.js"></script></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
   <body>
@@ -106,77 +106,59 @@
 
 
       <div class="flex-container">
-        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
-<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+        <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
 
+<!-- last: 按年份把文章分组，当前遍历到的年份 -->
+<!-- now: 当前遍历到的文章的发布年份 -->
 
-  <!-- LaTex Display -->
-
-  
-    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
-  
-  <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']]
-      }
-    }
-  </script>
-
-
-
-
-
-  <!-- clipboard -->
-
-  
-    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
-  
-  
-<script src="/js/codeCopy.js"></script>
-
-
-
-
-
-
-
-  
-
-  
-
-  
-  <!-- 关于页 url形式：https://yoursite/about/ -->
-    <div class="container about-index">
-      <div class="markdown-body">
-        <p><strong>我不是一个有趣的人，我只是在自己的世界活的精彩</strong></p>
-<p>普通人，职业程序员</p>
-<p>兴趣爱好比较广泛</p>
-<p>喜欢弹吉他、钢琴、摄影、编曲、drink</p>
-<p>微信&amp;phone：13065071223</p>
-<h2 id="5分钟看完我与吉他的2022"><a href="#5分钟看完我与吉他的2022" class="headerlink" title="5分钟看完我与吉他的2022"></a>5分钟看完我与吉他的2022</h2><div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"theme":"#FADFA3","loop":true,"lang":"zh-cn//语言","screenshot":true,"hotkey":true,"preload":"auto","volume":0.9,"video":{"url":"/video/my_2022.mp4","pic":"/images/my_2022.png"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
-<p><strong>请不要问我：为什么还不唱？</strong></p>
-<p>谢谢！</p>
-<h2 id="喜欢摄影"><a href="#喜欢摄影" class="headerlink" title="喜欢摄影"></a>喜欢摄影</h2><p>只是喜欢，拍的稀烂，但是摄影对我来说更多的是一种记录生活的手段，虽然手机也能拍，但也许正是因为这样的仪式感，旅行也变得更加有意义，也总是能为外出找个理由。</p>
-<h2 id="喜欢听的音乐风格"><a href="#喜欢听的音乐风格" class="headerlink" title="喜欢听的音乐风格"></a>喜欢听的音乐风格</h2><p>流行、古风、R&amp;B、后摇滚、古典？</p>
-<p>仔细想想，自己听歌还是比较杂的，对流行的喜欢还停留在初中许嵩和后弦的那个时代。</p>
-<p>后摇是前段时间开始喜欢的风格，我喜欢那种层层递进的表达。</p>
-<p>也很喜欢古典，对我来说现代音乐更像是一个具象的东西，我们感受的是作者的表达，不同的流派表达的情感不同，手法不同。<br>但古典音乐更抽象，更艺术，我们感受的<strong>是自己</strong>。<br>说得直白点，流行音乐是会听腻的，但古典不会。</p>
-<h2 id="平时也打游戏"><a href="#平时也打游戏" class="headerlink" title="平时也打游戏"></a>平时也打游戏</h2><p>偶尔打LOL，不过更喜欢在steam上找一些有趣的游戏玩。<br>我感觉自己已经很久不打游戏了。<br>推介游戏：</p>
-<ul>
-<li>底特律 · 变人</li>
-<li>奇异人生系列</li>
-<li>地平线4、5</li>
-<li>鬼谷八荒</li>
-</ul>
-<p>太多了，根本推荐不完……</p>
-<h2 id="我有一只猫"><a href="#我有一只猫" class="headerlink" title="我有一只猫"></a>我有一只猫</h2><p>我有一只猫，叫小五，一二三四五的五，只是因为她是第五个出生的。</p>
-
+<div class="container archives">
+  <div class="post-list">
+    
+        <!-- 后续文章的发布年份呈现 -->
+        <div class="content-title">
+          <h2>
+            <span>2023</span>
+          </h2>
+        </div>
+      
+      <div class="post-item" title="一次C端性能优化总结">
+        <div class="time-m-d">11-08</div>
+        <div class="title">
+          <a href="/2023/11/08/optimize/">
+            <span>一次C端性能优化总结</span>
+          </a>
+        </div>
       </div>
-    </div>
-  
-
-  
+    
+      <div class="post-item" title="整理一些特殊场景的第三方库">
+        <div class="time-m-d">08-08</div>
+        <div class="title">
+          <a href="/2023/08/08/package/">
+            <span>整理一些特殊场景的第三方库</span>
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="我是如何使用自己的mac的">
+        <div class="time-m-d">06-25</div>
+        <div class="title">
+          <a href="/2023/06/25/mac/">
+            <span>我是如何使用自己的mac的</span>
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="关于博客">
+        <div class="time-m-d">06-12</div>
+        <div class="title">
+          <a href="/2023/06/12/blog/">
+            <span>关于博客</span>
+          </a>
+        </div>
+      </div>
+    
+  </div>
+</div>
 
         
 <div class="footer">
@@ -440,24 +422,6 @@
 
 
         
-  
-    <div class="share-icon tools-bar-item">
-      <a href="javascript: void(0)" id="share-icon">
-        <i class="iconfont iconshare"></i>
-      </a>
-      <div class="share-content hidden">
-        
-          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + tags + '&url=' + https%3A%2F%2Fayu-fe.github.io%2Fabout%2F + '" target="_blank" title="Twitter">
-            <i class="iconfont icon-twitter"></i>
-          </a>
-        
-        
-          <a class="share-item" href="https://www.facebook.com/sharer.php?u=https://ayu-fe.github.io/about/" target="_blank" title="Facebook">
-            <i class="iconfont icon-facebooksquare"></i>
-          </a>
-        
-      </div>
-    </div>
   
   
 <script src="/js/shares.js"></script>
