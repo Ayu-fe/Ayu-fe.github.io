@@ -13,7 +13,7 @@
   
   <title>
     
-      archive_a: 2023/6 
+      谈一谈工作中常见的代理 
       
       
       |
@@ -106,77 +106,199 @@
 
 
       <div class="flex-container">
-        <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
-<!-- last: 按年份把文章分组，当前遍历到的年份 -->
-<!-- now: 当前遍历到的文章的发布年份 -->
 
-<div class="container archives">
-  <div class="post-list">
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2023</span>
-          </h2>
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      
+      <div class="post-title">谈一谈工作中常见的代理</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+          2023-11-15 11:10:46
+          
+          <span id="busuanzi_container_page_pv" class="ml-10">
+            阅读量<span id="busuanzi_value_page_pv"></span>
+          </span>
+        </span>
+        
+              <span class="post-tags">
+                <i class="iconfont icon-tags mr-10" title="Tags"></i>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/%E5%B7%A5%E4%BD%9C/" title="工作">
+                    #工作
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <p>日常开发调试时，我们通常会有两个本地开发的方式：</p>
+<ul>
+<li>使用webpack等构建工具提供的proxy，或代理工具，把请求转发到目标服务器上（可以理解为Remote）</li>
+<li>使用代理工具，把服务器的静态资源转发到本地端口（可以理解为Rewrite）</li>
+</ul>
+<h3 id="Remote-or-Rewrite"><a href="#Remote-or-Rewrite" class="headerlink" title="Remote or Rewrite"></a>Remote or Rewrite</h3><p>而具体哪一种更好，我个人觉得还是得分场景看。<br>通常情况下，如果你的开发协同模式是一边开发一边联调，server每次把代码推到他的服务器上，那使用remote显然是更好的选择。<br>但如果联调方式是同时部署在测试环境或者线上小流量时，remote和rewrite就都可以。</p>
+<p>我个人更倾向于使用rewrite，不仅是因为我在工作协同中基本上都是使用线上域名小流量调试，主要我觉得<strong>rewrite可以做到无成本与工程解耦</strong>，对于任何项目，我都可以使用rewrite快速开发，而不是考虑工程环境的影响。</p>
+<p>在实际工作中，<strong>我们团队的最佳实践还是使用Rewrite</strong>，我很少看到有项目在使用本地域名开发，不管是使用第三方工具，还是框架内置的代理工具。</p>
+<h3 id="how-rewrite"><a href="#how-rewrite" class="headerlink" title="how rewrite"></a>how rewrite</h3><p>Remote这里就不多说了，基本上所有构建工具开启的方式都大差不差。这里主要说一下rewrite，因为我发现在实际工作中，其实大部分开发者都不需要配置这些东西，需要自己配置时，一般就去问别人或者各种搜，出了问题也是一脸懵逼。</p>
+<p>其实rewrite很简单，举个例子就明白了，我的线上连接是这样的：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">https</span>:<span class="comment">//blog.ayulove.life/</span></span><br></pre></td></tr></table></figure>
+<p>我的本地服务器是这样的：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">http</span>:<span class="comment">//localhost:4000/</span></span><br></pre></td></tr></table></figure>
+<p>现在我需要通过代理工具把线上域名打到本地，我只需要写一行正则就可以搞定</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// match</span></span><br><span class="line"><span class="attr">https</span>:<span class="comment">//blog.ayulove.life/(.*)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// replace</span></span><br><span class="line"><span class="attr">http</span>:<span class="comment">//localhost:4000/$1</span></span><br></pre></td></tr></table></figure>
+<p>很简单吧，其实这就是rewrite的基本操作，也是核心思路，但实际工作中的路由远没有这么简单，我们再看一个例子</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">https</span>:<span class="comment">//test.com/moor/app/m/look.html?a=1 // 线上url</span></span><br><span class="line"><span class="attr">http</span>:<span class="comment">//localhost:4000/moor/app/m/look.html?a=1 // 本地服务器</span></span><br><span class="line"></span><br><span class="line"><span class="attr">https</span>:<span class="comment">//test.com([^\.]+\..*) // match</span></span><br><span class="line"><span class="attr">http</span>:<span class="comment">//localhost:4000$1 //replace</span></span><br></pre></td></tr></table></figure>
+<p>在这个case里，由于路由变得复杂起来了，<strong>我们需要写一个通用的规则把服务器的静态资源打到本地</strong>，所以这里写了这样一个正则<code>([^\.]+\..*)</code>，我们解析一下这个正则：</p>
+<ul>
+<li><code>[^\.]+</code>：匹配一个或多个非句点字符。方括号内的 ^ 表示取反，. 表示匹配句点字符（. 的转义），所以 [^.]+ 表示匹配除句点之外的任意字符一次或多次。</li>
+<li><code>\.</code>：匹配句点字符。</li>
+<li><code>.*</code>：匹配零个或多个任意字符。</li>
+</ul>
+<p>这样看起来似乎可以了，但还不够，<strong>在生产环境中线上路由和本地路由很少一致，所以我们要针对前端路由再写一条正则</strong><br>还是上面的例子，现在我改一下本地服务器路由</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">http</span>:<span class="comment">//localhost:4000/look/index.html?a=1 // 本地服务器</span></span><br></pre></td></tr></table></figure>
+<p>那上面一条正则就不够使了，我们需要再加一条</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">https</span>:<span class="comment">//test.com/moor/app/m/(.*)\.html(.*) // match</span></span><br><span class="line"><span class="attr">http</span>:<span class="comment">//localhost:4000/$1/index.html$2 // replace</span></span><br></pre></td></tr></table></figure>
+<p>这样就可以了，<strong>我们使用正则中的捕获，在replace中反向引用</strong>，完成了我们想要的代理。<br>到这里，其实我们就应该已经很清晰了，所谓rewrite就是利用正则去匹配路由，然后代理到自己的服务器上，无非就是因为路由不一样，写的正则不一样而已，其实并没什么东西。</p>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_expressions">正则表达式看这里</a></p>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>代理这种东西需要case by case去看，不同场景下匹配规则不一致，重要的是我们要知道原理是什么，写的每一行命令有什么用，才不会导致我们遇到问题时不知所措。</p>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2023/11/12/tina/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+              2023-11-15 11:10:46
+            </span>
+            
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags mr-10" title="Tags"></i>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/%E5%B7%A5%E4%BD%9C/" title="工作">
+                        #工作
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
         </div>
       
-      <div class="post-item" title="谈一谈工作中常见的代理">
-        <div class="time-m-d">11-14</div>
-        <div class="title">
-          <a href="/2023/11/14/proxy/">
-            <span>谈一谈工作中常见的代理</span>
-          </a>
-        </div>
-      </div>
+    </div>
     
-      <div class="post-item" title="写给洋洋的信">
-        <div class="time-m-d">11-12</div>
-        <div class="title">
-          <a href="/2023/11/12/tina/">
-            <span>写给洋洋的信</span>
-          </a>
-        </div>
-      </div>
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Remote-or-Rewrite"><span class="toc-text">Remote or Rewrite</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#how-rewrite"><span class="toc-text">how rewrite</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%90%8E"><span class="toc-text">最后</span></a></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
     
-      <div class="post-item" title="一次C端性能优化总结">
-        <div class="time-m-d">11-08</div>
-        <div class="title">
-          <a href="/2023/11/08/optimize/">
-            <span>一次C端性能优化总结</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="整理一些特殊场景的第三方库">
-        <div class="time-m-d">08-08</div>
-        <div class="title">
-          <a href="/2023/08/08/package/">
-            <span>整理一些特殊场景的第三方库</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="我是如何使用自己的mac的">
-        <div class="time-m-d">06-25</div>
-        <div class="title">
-          <a href="/2023/06/25/mac/">
-            <span>我是如何使用自己的mac的</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="关于博客">
-        <div class="time-m-d">06-12</div>
-        <div class="title">
-          <a href="/2023/06/12/blog/">
-            <span>关于博客</span>
-          </a>
-        </div>
+      <div class="comments-container">
+        
+
+
+
+
+  
+    <script async type="text/javascript" src="/plugins/valine.min.js" onload="loadValineSuc(this)"></script>
+  
+
+  <div id="vcomments"></div>
+
+  <script>
+    function loadValineSuc() {
+      new Valine({
+        el: '#vcomments',
+        appId: 'TInBwkOJroOsenQdqeYlBf3t-gzGzoHsz',
+        appKey: '9HSDLKQ0vdaPQkHqCfa7iH0w',
+        placeholder: 'welcome!',
+        avatar: 'retro',
+        lang: 'en'
+      })
+    }
+  </script>
+
+    <style>
+      .comments-container .v .vempty {
+        display: none!important;
+      }
+    </style>
+
+
+
+
       </div>
     
   </div>
-</div>
+
 
         
 <div class="footer">
@@ -440,6 +562,24 @@
 
 
         
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + %E8%B0%88%E4%B8%80%E8%B0%88%E5%B7%A5%E4%BD%9C%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E4%BB%A3%E7%90%86 + '&url=' + https%3A%2F%2Fayu-fe.github.io%2F2023%2F11%2F14%2Fproxy%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=https://ayu-fe.github.io/2023/11/14/proxy/" target="_blank" title="Facebook">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        
+      </div>
+    </div>
   
   
 <script src="/js/shares.js"></script>
